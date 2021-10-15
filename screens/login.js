@@ -1,20 +1,22 @@
 import React from "react";
 import { View, Text, Image} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { AntDesign } from '@expo/vector-icons';
 
 
 export default function login() {
     return <View style={{flex:1, justifyContent:"center",
-    alignItems:"center"
+    alignItems:"center", backgroundColor:"white"
     }}>
         <Image 
         style={{
-            width:150,
-            height:150, 
-            borderRadius:10,
+            width:250,
+            height:170, 
+            borderRadius:20,
             marginBottom:20,
+            transform:[{rotate:"-15deg"}]
         }}
-        source = {{  uri:"https://d1mo5ln9tjltxq.cloudfront.net/-/media/images/homepage/homepage_e-bike-collections.ashx"}}
+        source = {{  uri:"https://surlybikes.com/uploads/bikes/Wednesday_BK0052_Background-1200x800.jpg"}}
          />
         <Text style={{color:"rgba(0,0,0,0.6)", fontSize:24}}>
             Welcome to 
@@ -27,19 +29,27 @@ export default function login() {
         padding:10,
          paddingHorizontal:60,
         marginTop:20,
+        flexDirection:"row",
         borderRadius:10
         }}> 
-        <Text style={{fontSize:20}}>Login with Gmail</Text>
+        <AntDesign name="google" size={24} color="black" />
+        <Text style={{fontSize:20, paddingLeft:5}}>Login with Gmail</Text>
         </TouchableOpacity>
         <TouchableOpacity 
         style={{backgroundColor:"black",
         borderRadius:10,
         padding:10,
         paddingHorizontal:60,
+        flexDirection:"row",
         marginTop:20}}>
-            <Text style={{fontSize:20, color:"white"}}>Login with Apple</Text>
+            <AntDesign name="apple1" size={20} color="white" />
+            <Text style={{fontSize:20, color:"white", paddingLeft:5}}>Login with Apple</Text>
 
         </TouchableOpacity>
+        <Text style={{marginTop:10, fontWeight:'500', color:'grey'}}>Not a member?
+         <Text style={{color:'orange', }}>Signup</Text>
+        </Text>
+         
 
     </View>;
 }
