@@ -4,7 +4,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { AntDesign } from '@expo/vector-icons';
 
 
-export default function login() {
+export default function login({navigation}) {
     return <View style={{flex:1, justifyContent:"center",
     alignItems:"center", backgroundColor:"white"
     }}>
@@ -25,6 +25,9 @@ export default function login() {
             Power Bike Shop
         </Text>
         <TouchableOpacity 
+        onPress={() => {
+            navigation.navigate("home")
+        }}
         style={{backgroundColor:"#e3e3e3",
         padding:10,
          paddingHorizontal:60,
