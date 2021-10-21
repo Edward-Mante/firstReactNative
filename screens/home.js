@@ -3,6 +3,7 @@ import { View, Text, FlatList, Image } from "react-native";
 import{ Feather, FontAwesome, AntDesign, 
     Ionicons, Foundation, FontAwesome5, MaterialIcons}
 from '@expo/vector-icons';
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const IMAGES = {
     image1: require('../assets/bic2.png'),
@@ -12,7 +13,7 @@ const IMAGES = {
 };
 
 
-export default function home() {
+export default function home({navigation}) {
     const [images, setimages] = useState([
         
         {image: IMAGES.image1, id:'1',
@@ -59,7 +60,7 @@ export default function home() {
                   <View style={{alignItems:"flex-end",}}>
                       <FontAwesome name="heart-o" size={24} style={{  }} />
                   </View>
-                  
+
                   <Image 
                   style={{ height: 100, width:100 }}
                    source={item.image} />
@@ -72,8 +73,14 @@ export default function home() {
             />
 
         </View>
+        
         <View style={{backgroundColor:"#e9e8ed", flexDirection:"row", justifyContent:"space-between"}}>
+            <TouchableOpacity 
+            onPress={() => {
+                navigation.navigate("login")
+            }}>
             <Foundation name="home" size={24} style={{color:"orange"}} />
+          </TouchableOpacity>
 
             <View style={{height:40, width:40, borderRadius:20, backgroundColor:"white",transform:[{translateY:-20}]}}>
             <View style={{height:40, width:40, borderRadius:20, backgroundColor:"black",}}>
